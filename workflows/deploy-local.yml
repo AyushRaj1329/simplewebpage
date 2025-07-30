@@ -1,0 +1,17 @@
+name: Local Deploy on Push
+
+on:
+  push:
+    branches:
+      - main   # or your default branch
+  workflow_dispatch:  # for manual trigger too
+
+jobs:
+  local-deploy:
+    runs-on: self-hosted
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Pull latest code (confirmation)
+        run: echo "Code checked out on local machine"
