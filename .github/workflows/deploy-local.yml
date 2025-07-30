@@ -20,7 +20,7 @@ jobs:
         shell: powershell
         run: |
           $source = "$env:GITHUB_WORKSPACE"
-          $destination = "C:\Users\yogra\Desktop\projects\simplewebpage"
+          $destination = "C:\deploy\simplewebpage"
 
           
           Remove-Item -Path "$destination\*" -Recurse -Force -ErrorAction SilentlyContinue
