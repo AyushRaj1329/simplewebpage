@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main   # or your default branch
-  workflow_dispatch:  # for manual trigger too
+  workflow_dispatch:  # manual trigger support
 
 jobs:
   local-deploy:
@@ -15,3 +15,15 @@ jobs:
 
       - name: Pull latest code (confirmation)
         run: echo "Code checked out on local machine"
+
+      - name: Copy files to local Python server directory
+        shell: powershell
+        run: |
+          $source = "$env:GITHUB_WORKSPACE"
+          $destination = "C:\Users\yogra\Desktop\projects\simplewebpage"
+
+          
+          Remove-Item -Path "$destination\*" -Recurse -Force -ErrorAction SilentlyContinue
+
+          
+          Copy-Item -Path "$source\*" -Destination $destination -Recurse -Force
