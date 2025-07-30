@@ -3,28 +3,45 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Simple Web Page</title>
+  <title>Aesthetic Frontend</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>Welcome to My Web Page</h1>
-    <p>This is a simple HTML & CSS project.</p>
-        <p>This is a simple HTML & CSS project.</p>
 
+  <header class="navbar">
+    <h1>🌸 My Aesthetic Site</h1>
+    <nav>
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main>
-    <section>
-      <h2>About</h2>
-      <p>This project is built from scratch as part of my CI/CD learning.</p>
-      <p>helo</p>
+  <section id="hero" class="hero">
+    <h2>Hello, I’m Ayush 👋</h2>
+    <p>I build beautiful and functional websites with HTML, CSS & JavaScript.</p>
+  </section>
 
-    </section>
-  </main>
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>A frontend developer passionate about creating visually appealing user interfaces and seamless user experiences.</p>
+  </section>
+
+  <section id="projects" class="projects">
+    <h2>Featured Projects</h2>
+    <div class="card-container">
+      <div class="card">🌐 Portfolio Website</div>
+      <div class="card">📱 Responsive UI</div>
+      <div class="card">⚡ Interactive Gallery</div>
+    </div>
+  </section>
 
   <footer>
-    <p>© 2025 Ayush Raj</p>
+    <p>Made with ❤️ by Ayush | 2025</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

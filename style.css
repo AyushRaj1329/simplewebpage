@@ -1,26 +1,95 @@
-body {
-  font-family: Arial, sans-serif;
+:root {
+  --primary: #7f5af0;
+  --background: #f4f4fa;
+  --accent: #ffb86b;
+  --text: #1e1e2f;
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --glass-blur: blur(10px);
+}
+
+* {
   margin: 0;
   padding: 0;
-  background-color: #f7f7f7;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background: var(--primary);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  color: var(--accent);
+}
+
+.hero {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(145deg, #fdfbff, #e8e6fa);
+}
+
+.about, .projects {
+  padding: 3rem 2rem;
   text-align: center;
 }
 
-header {
-  background-color: #007acc;
-  color: white;
-  padding: 40px 0;
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
-main {
-  padding: 20px;
+.card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  border-radius: 12px;
+  width: 250px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
 }
 
 footer {
-  background-color: #333;
-  color: #ccc;
-  padding: 15px 0;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+  text-align: center;
+  padding: 1.5rem;
+  background: #1e1e2f;
+  color: white;
 }
