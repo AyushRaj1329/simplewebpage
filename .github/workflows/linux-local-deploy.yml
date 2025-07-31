@@ -21,7 +21,7 @@ jobs:
 
       - name: Reload and restart systemd service
         run: |
-          sudo systemctl daemon-reexec
+          
           sudo systemctl daemon-reload
           sudo systemctl restart simplewebpage
 
