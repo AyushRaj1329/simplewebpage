@@ -16,10 +16,10 @@ jobs:
 
       - name: Copy files to local deployment directory
         run: |
-          mkdir -p /home/ayush.i.raj@happiestminds.com/simplewebpage
-          cp -r $GITHUB_WORKSPACE/* /home/ayush.i.raj@happiestminds.com/simplewebpage/
+          mkdir -p "/home/ayush.i.raj@happiestminds.com/simplewebpage"
+          cp -r "$GITHUB_WORKSPACE"/* "/home/ayush.i.raj@happiestminds.com/simplewebpage/"
 
       - name: Restart local Python server
         run: |
           pkill -f "python3 -m http.server" || true
-          nohup python3 -m http.server 8080 -d /home/ayush.i.raj@happiestminds.com/simplewebpage > /dev/null 2>&1 &
+          nohup python3 -m http.server 8080 -d "/home/ayush.i.raj@happiestminds.com/simplewebpage" > /dev/null 2>&1 &
