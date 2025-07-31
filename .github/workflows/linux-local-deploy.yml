@@ -1,0 +1,25 @@
+name: Deploy Locally on Linux
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy-on-linux:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Copy files to local deployment directory
+        run: |
+          mkdir -p /home/ayush.i.raj@happiestminds.com/simplewebpage
+          cp -r $GITHUB_WORKSPACE/* /home/ayush.i.raj@happiestminds.com/simplewebpage/
+
+      - name: Restart local Python server
+        run: |
+          pkill -f "python3 -m http.server" || true
+          nohup python3 -m http.server 8080 -d /home/ayush.i.raj@happiestminds.com/simplewebpage > /dev/null 2>&1 &
